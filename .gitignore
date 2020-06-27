@@ -111,6 +111,7 @@ ipch/
 # Editor
 .vs
 .vscode
+.idea
 
 # Logs
 mono_crash.*.json
