@@ -4,6 +4,7 @@ using System;
 public class Player : KinematicBody2D
 {
     private int _doubleJumpCount;
+    private int _dashCount;
     
     private const float Speed = 70;
     private const float JumpHeight = 170;
@@ -12,6 +13,7 @@ public class Player : KinematicBody2D
     private const float Friction = 0.1f;
     private const float LandingSpeedReduction = 0.2f;
     private const int MaxDoubleJumpCount = 1;
+    private const int MaxDashCount = 1;
     
     public bool IsDoubleJumping { get; private set; }
     public Vector2 Velocity = Vector2.Zero;
@@ -21,6 +23,7 @@ public class Player : KinematicBody2D
         GetHorizontalInput();
         ApplyGravity(delta);
         HandleJump();
+        HandleDash();
         HandleMovement();
     }
 
@@ -56,6 +59,14 @@ public class Player : KinematicBody2D
         Velocity.y = -JumpHeight;
         _doubleJumpCount--;
     }
+
+    private void HandleDash()
+    {
+        if (IsOnFloor()) _dashCount = MaxDashCount;
+        if (!Input.IsActionJustPressed("ui_dash") || !CanDash()) return;
+        _dashCount--;
+        // TODO: Dash
+    }
     
     private void HandleMovement()
     {
@@ -65,5 +76,10 @@ public class Player : KinematicBody2D
     private bool CanDoubleJump()
     {
         return _doubleJumpCount > 0;
+    }
+
+    private bool CanDash()
+    {
+        return _dashCount > 0;
     }
 }
