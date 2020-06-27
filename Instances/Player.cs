@@ -4,10 +4,11 @@ using System;
 public class Player : KinematicBody2D
 {
     private const float Speed = 70;
-    private const float Gravity = 300;
+    private const float JumpHeight = 170;
+    private const float Gravity = 400;
     private const float Acceleration = 0.25f;
     private const float Friction = 0.1f;
-    private const float LandingSpeedReduction = 0.25f;
+    private const float LandingSpeedReduction = 0.2f;
     
     public Vector2 Velocity = Vector2.Zero;
 
@@ -15,6 +16,7 @@ public class Player : KinematicBody2D
     {
         GetHorizontalInput();
         ApplyGravity(delta);
+        HandleJump();
         HandleMovement();
     }
 
@@ -31,6 +33,15 @@ public class Player : KinematicBody2D
         Velocity.y += (Velocity.y < 0 ? Gravity : Gravity * (1 - LandingSpeedReduction)) * delta;
     }
 
+    private void HandleJump()
+    {
+        if (!Input.IsActionJustPressed("ui_jump")) return;
+        if (IsOnFloor())
+        {
+            Velocity.y = -JumpHeight;
+        }
+    }
+    
     private void HandleMovement()
     {
         Velocity = MoveAndSlide(Velocity, Vector2.Up);

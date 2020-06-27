@@ -5,7 +5,7 @@ public class PlayerAnimatedSprite : AnimatedSprite
 {
     private Player _player;
     private const float RunningThreshold = 10f;
-    
+
     public override void _Ready()
     {
         _player = GetNode<Player>("..");
@@ -19,12 +19,14 @@ public class PlayerAnimatedSprite : AnimatedSprite
 
     private void HandleHorizontalFlip()
     {
-        int facing = Math.Sign(_player.Velocity.x);
+        var facing = Math.Sign(_player.Velocity.x);
         if (facing != 0) FlipH = facing != 1;
     }
 
     private string GetAnimationState()
     {
-        return Math.Abs(_player.Velocity.x) > RunningThreshold ? "run" : "idle";
+        if (_player.IsOnFloor()) return Math.Abs(_player.Velocity.x) > RunningThreshold ? "run" : "idle";
+        if (_player.Velocity.y < 0) return "jump";
+        return _player.Velocity.y > 0 ? "fall" : null;
     }
 }
