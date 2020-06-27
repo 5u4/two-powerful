@@ -26,7 +26,7 @@ public class PlayerAnimatedSprite : AnimatedSprite
     private string GetAnimationState()
     {
         if (_player.IsOnFloor()) return Math.Abs(_player.Velocity.x) > RunningThreshold ? "run" : "idle";
-        if (_player.Velocity.y < 0) return "jump";
+        if (_player.Velocity.y < 0) return _player.IsDoubleJumping ? "doublejump" : "jump";
         return _player.Velocity.y > 0 ? "fall" : null;
     }
 }
