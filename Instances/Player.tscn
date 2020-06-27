@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://Assets/Instances/Player/herochar_idle_anim_strip_4.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Instances/Player/herochar_run_anim_strip_6.png" type="Texture" id=2]
@@ -13,6 +13,8 @@
 [ext_resource path="res://Instances/PlayerRun.cs" type="Script" id=11]
 [ext_resource path="res://Instances/PlayerJump.cs" type="Script" id=12]
 [ext_resource path="res://Instances/PlayerDoubleJump.cs" type="Script" id=13]
+[ext_resource path="res://Instances/PlayerDash.cs" type="Script" id=14]
+[ext_resource path="res://Instances/ActionLockTimer.cs" type="Script" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6, 8 )
@@ -212,3 +214,10 @@ script = ExtResource( 12 )
 
 [node name="DoubleJump" type="Node2D" parent="."]
 script = ExtResource( 13 )
+
+[node name="Dash" type="Node2D" parent="."]
+script = ExtResource( 14 )
+
+[node name="ActionLockTimer" type="Timer" parent="."]
+script = ExtResource( 15 )
+[connection signal="timeout" from="ActionLockTimer" to="ActionLockTimer" method="_on_ActionLockTimer_timeout"]

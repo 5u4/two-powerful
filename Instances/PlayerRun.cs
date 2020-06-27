@@ -15,6 +15,7 @@ public class PlayerRun : Node2D
 
     public override void _PhysicsProcess(float delta)
     {
+        if (_player.ActionLockTimer.IsLocked) return;
         var direction = Input.GetActionStrength("ui_right") - Input.GetActionStrength("ui_left");
         _player.Velocity.x = Math.Abs(direction) > 0
             ? Mathf.Lerp(_player.Velocity.x, direction * Speed, Acceleration)
