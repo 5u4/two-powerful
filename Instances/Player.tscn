@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://Assets/Instances/Player/herochar_idle_anim_strip_4.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Instances/Player/herochar_run_anim_strip_6.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Instances/Player.cs" type="Script" id=8]
 [ext_resource path="res://Instances/PlayerAnimatedSprite.cs" type="Script" id=9]
 [ext_resource path="res://Instances/PlayerGravity.cs" type="Script" id=10]
+[ext_resource path="res://Instances/PlayerRun.cs" type="Script" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6, 8 )
@@ -200,3 +201,6 @@ script = ExtResource( 9 )
 
 [node name="Gravity" type="Node2D" parent="."]
 script = ExtResource( 10 )
+
+[node name="Run" type="Node2D" parent="."]
+script = ExtResource( 11 )

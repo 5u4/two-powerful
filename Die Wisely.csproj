@@ -60,6 +60,7 @@
     <Compile Include="Instances\Player.cs" />
     <Compile Include="Instances\PlayerAnimatedSprite.cs" />
     <Compile Include="Instances\PlayerGravity.cs" />
+    <Compile Include="Instances\PlayerRun.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
