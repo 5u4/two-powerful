@@ -57,16 +57,21 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Instances\ActionLockTimer.cs" />
-    <Compile Include="Instances\Player.cs" />
-    <Compile Include="Instances\PlayerAnimatedSprite.cs" />
-    <Compile Include="Instances\PlayerAttack.cs" />
-    <Compile Include="Instances\PlayerDash.cs" />
-    <Compile Include="Instances\PlayerGravity.cs" />
-    <Compile Include="Instances\PlayerJump.cs" />
-    <Compile Include="Instances\PlayerRun.cs" />
-    <Compile Include="Instances\PlayerWallJump.cs" />
+    <Compile Include="Instances\Player\ActionLockTimer.cs" />
+    <Compile Include="Instances\Player\Health.cs" />
+    <Compile Include="Instances\Player\Player.cs" />
+    <Compile Include="Instances\Player\PlayerAnimatedSprite.cs" />
+    <Compile Include="Instances\Player\PlayerAttack.cs" />
+    <Compile Include="Instances\Player\PlayerDash.cs" />
+    <Compile Include="Instances\Player\PlayerGravity.cs" />
+    <Compile Include="Instances\Player\PlayerJump.cs" />
+    <Compile Include="Instances\Player\PlayerRun.cs" />
+    <Compile Include="Instances\Player\PlayerWallJump.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\PlayerHealth.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UI" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
