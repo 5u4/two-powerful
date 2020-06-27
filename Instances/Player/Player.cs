@@ -14,6 +14,10 @@ namespace DieWisely.Instances.Player
         public ActionLockTimer ActionLockTimer;
         public Vector2 Velocity = Vector2.Zero;
 
+        public int Health { get; private set; }
+
+        [Signal] public delegate void HealthChange();
+
         public override void _Ready()
         {
             AnimatedSprite = GetNode<PlayerAnimatedSprite>("AnimatedSprite");
@@ -29,6 +33,12 @@ namespace DieWisely.Instances.Player
         public override void _PhysicsProcess(float delta)
         {
             Velocity = MoveAndSlide(Velocity, Vector2.Up);
+        }
+
+        public void Hit()
+        {
+            Health--;
+            EmitSignal(nameof(HealthChange));
         }
     }
 }
