@@ -20,6 +20,12 @@ public class ActionLockTimer : Timer
         Start(duration);
         IsLocked = true;
     }
+
+    public void Unlock()
+    {
+        IsLocked = false;
+        Stop();
+    }
     
     public void _on_ActionLockTimer_timeout()
     {

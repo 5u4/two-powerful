@@ -6,6 +6,7 @@ public class PlayerAnimatedSprite : AnimatedSprite
     private Player _player;
     private PlayerJump _playerJump;
     private PlayerDash _playerDash;
+    private PlayerAttack _playerAttack;
     private const float RunningThreshold = 10f;
 
     public override void _Ready()
@@ -13,6 +14,7 @@ public class PlayerAnimatedSprite : AnimatedSprite
         _player = GetNode<Player>("..");
         _playerJump = _player.GetNode<PlayerJump>("Jump");
         _playerDash = _player.GetNode<PlayerDash>("Dash");
+        _playerAttack = _player.GetNode<PlayerAttack>("Attack");
     }
 
     public override void _Process(float delta)
@@ -29,6 +31,7 @@ public class PlayerAnimatedSprite : AnimatedSprite
 
     private string GetAnimationState()
     {
+        if (_playerAttack.IsAttacking) return "attack";
         if (_playerDash.IsDashing) return "dash";
         if (_player.IsOnFloor()) return Math.Abs(_player.Velocity.x) > RunningThreshold ? "run" : "idle";
         if (_player.Velocity.y < 0) return _playerJump.IsDoubleJumping() ? "doublejump" : "jump";

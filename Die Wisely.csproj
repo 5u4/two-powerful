@@ -60,6 +60,7 @@
     <Compile Include="Instances\ActionLockTimer.cs" />
     <Compile Include="Instances\Player.cs" />
     <Compile Include="Instances\PlayerAnimatedSprite.cs" />
+    <Compile Include="Instances\PlayerAttack.cs" />
     <Compile Include="Instances\PlayerDash.cs" />
     <Compile Include="Instances\PlayerGravity.cs" />
     <Compile Include="Instances\PlayerJump.cs" />
