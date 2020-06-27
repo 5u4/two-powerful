@@ -25,7 +25,7 @@ public class PlayerDash : Node2D
     {
         if (_player.IsOnFloor()) _dashCount = MaxDashCount;
         if (!Input.IsActionJustPressed("ui_dash") || _dashCount <= 0 || _player.ActionLockTimer.IsLocked) return;
-        _gravity.SetPhysicsProcess(false);
+        _gravity.Enabled = false;
         _dashCount--;
         IsDashing = true;
         var horizontal = Input.GetActionStrength("ui_right") - Input.GetActionStrength("ui_left");
@@ -35,7 +35,7 @@ public class PlayerDash : Node2D
         _player.Velocity.y = vertical * DashSpeed;
         _player.ActionLockTimer.Lock(DashDuration, () =>
         {
-            _gravity.SetPhysicsProcess(true);
+            _gravity.Enabled = true;
             _player.Velocity = Vector2.Zero;
             IsDashing = false;
         });

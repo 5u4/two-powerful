@@ -65,6 +65,7 @@
     <Compile Include="Instances\PlayerGravity.cs" />
     <Compile Include="Instances\PlayerJump.cs" />
     <Compile Include="Instances\PlayerRun.cs" />
+    <Compile Include="Instances\PlayerWallJump.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
