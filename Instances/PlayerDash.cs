@@ -11,6 +11,8 @@ public class PlayerDash : Node2D
     private const float DashDuration = 0.2f;
     private const float DashSpeed = 200f;
     private const int MaxDashCount = 1;
+    
+    public bool IsDashing { get; private set; }
 
     public override void _Ready()
     {
@@ -25,6 +27,7 @@ public class PlayerDash : Node2D
         if (!Input.IsActionJustPressed("ui_dash") || _dashCount <= 0 || _player.ActionLockTimer.IsLocked) return;
         _gravity.SetPhysicsProcess(false);
         _dashCount--;
+        IsDashing = true;
         var horizontal = Input.GetActionStrength("ui_right") - Input.GetActionStrength("ui_left");
         var vertical = Input.GetActionStrength("ui_down") - Input.GetActionStrength("ui_up");
         if (horizontal == 0 && vertical == 0) horizontal = _animatedSprite.FlipH ? -1 : 1;
@@ -34,6 +37,7 @@ public class PlayerDash : Node2D
         {
             _gravity.SetPhysicsProcess(true);
             _player.Velocity = Vector2.Zero;
+            IsDashing = false;
         });
     }
 }
