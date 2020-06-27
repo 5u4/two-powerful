@@ -61,7 +61,6 @@
     <Compile Include="Instances\Player.cs" />
     <Compile Include="Instances\PlayerAnimatedSprite.cs" />
     <Compile Include="Instances\PlayerDash.cs" />
-    <Compile Include="Instances\PlayerDoubleJump.cs" />
     <Compile Include="Instances\PlayerGravity.cs" />
     <Compile Include="Instances\PlayerJump.cs" />
     <Compile Include="Instances\PlayerRun.cs" />

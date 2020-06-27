@@ -4,6 +4,8 @@ using System;
 public class PlayerJump : Node2D
 {
     private Player _player;
+    private int _jumpCount;
+    private int _maxJumpCount = 2;
     
     private const float JumpHeight = 170;
 
@@ -14,7 +16,34 @@ public class PlayerJump : Node2D
 
     public override void _PhysicsProcess(float delta)
     {
-        if (!Input.IsActionJustPressed("ui_jump") || !_player.IsOnFloor()) return;
+        if (_player.IsOnFloor())
+        {
+            _jumpCount = _maxJumpCount;
+        }
+
+        if (!Input.IsActionJustPressed("ui_jump") || _jumpCount <= 0 || _player.ActionLockTimer.IsLocked ||
+            _player.IsOnWall()) return;
         _player.Velocity.y = -JumpHeight;
+        _jumpCount--;
+    }
+
+    public bool IsDoubleJumping()
+    {
+        return CanDoubleJump() && _jumpCount < _maxJumpCount - 1;
+    }
+
+    public void EnableDoubleJump()
+    {
+        _maxJumpCount = 2;
+    }
+
+    public void DisableDoubleJump()
+    {
+        _maxJumpCount = 1;
+    }
+
+    public bool CanDoubleJump()
+    {
+        return _maxJumpCount == 2;
     }
 }
