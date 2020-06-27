@@ -4,10 +4,6 @@ using System;
 public class PlayerAnimatedSprite : AnimatedSprite
 {
     private Player _player;
-    private PlayerJump _playerJump;
-    private PlayerDash _playerDash;
-    private PlayerAttack _playerAttack;
-    private PlayerWallJump _playerWallJump;
     private bool _borning = true;
     
     private const float RunningThreshold = 10f;
@@ -15,10 +11,6 @@ public class PlayerAnimatedSprite : AnimatedSprite
     public override void _Ready()
     {
         _player = GetNode<Player>("..");
-        _playerJump = _player.GetNode<PlayerJump>("Jump");
-        _playerDash = _player.GetNode<PlayerDash>("Dash");
-        _playerAttack = _player.GetNode<PlayerAttack>("Attack");
-        _playerWallJump = _player.GetNode<PlayerWallJump>("WallJump");
         GetNode<ActionLockTimer>("../ActionLockTimer").Lock(float.PositiveInfinity);
     }
 
@@ -37,11 +29,11 @@ public class PlayerAnimatedSprite : AnimatedSprite
     private string GetAnimationState()
     {
         if (_borning) return "born";
-        if (_playerAttack.IsAttacking) return "attack";
-        if (_playerDash.IsDashing) return "dash";
+        if (_player.Attack.IsAttacking) return "attack";
+        if (_player.Dash.IsDashing) return "dash";
         if (_player.IsOnFloor()) return Math.Abs(_player.Velocity.x) > RunningThreshold ? "run" : "idle";
         if (_player.Velocity.y < 0)
-            return _playerJump.IsDoubleJumping() && !_playerWallJump.IsWallJumping ? "doublejump" : "jump";
+            return _player.Jump.IsDoubleJumping() && !_player.WallJump.IsWallJumping ? "doublejump" : "jump";
         return _player.Velocity.y > 0 ? "fall" : null;
     }
 

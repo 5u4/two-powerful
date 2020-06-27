@@ -14,22 +14,26 @@ public class PlayerWallJump : Node2D
     public override void _Ready()
     {
         _player = GetNode<Player>("..");
-        Enabled = true;
     }
 
     public override void _PhysicsProcess(float delta)
     {
         if (_player.IsOnFloor()) IsWallJumping = false;
-        if (!Input.IsActionJustPressed("ui_jump") || !WillWallJump()) return;
+        if (WillWallJump()) WallJump();
+
+    }
+
+    public bool WillWallJump()
+    {
+        return Enabled && Input.IsActionJustPressed("ui_jump") && !_player.IsOnFloor() && _player.IsOnWall();
+    }
+
+    private void WallJump()
+    {
         IsWallJumping = true;
         var horizontal = Input.GetActionStrength("ui_left") - Input.GetActionStrength("ui_right");
         _player.Velocity.x = horizontal * JumpSpeed;
         _player.Velocity.y = -JumpSpeed;
         _player.ActionLockTimer.Lock(LockDuration);
-    }
-
-    public bool WillWallJump()
-    {
-        return Enabled && !_player.IsOnFloor() && _player.IsOnWall();
     }
 }
