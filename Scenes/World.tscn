@@ -1,14 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Instances/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Tilesets/Tilemap.tscn" type="PackedScene" id=2]
-[ext_resource path="res://UI/PlayerHealth.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Instances/Abilities/AbilityOrb.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/GameManager.tscn" type="PackedScene" id=5]
 
 [node name="World" type="Node2D"]
-
-[node name="GameManager" parent="." instance=ExtResource( 5 )]
 
 [node name="Tilemap" parent="." instance=ExtResource( 2 )]
 tile_data = PoolIntArray( 0, 5, 0, 1, 6, 0, 2, 6, 0, 3, 6, 0, 4, 6, 0, 5, 6, 0, 6, 6, 0, 7, 6, 0, 8, 6, 0, 9, 6, 0, 10, 6, 0, 11, 6, 0, 12, 6, 0, 13, 6, 0, 14, 6, 0, 15, 7, 0, 65536, 13, 0, 65551, 14, 0, 131072, 13, 0, 131087, 14, 0, 196608, 13, 0, 196623, 14, 0, 262144, 13, 0, 262159, 14, 0, 327680, 13, 0, 327695, 14, 0, 393216, 13, 0, 393231, 14, 0, 458752, 13, 0, 458767, 14, 0, 524288, 13, 0, 524303, 14, 0, 589824, 17, 0, 589825, 16, 0, 589826, 16, 0, 589827, 16, 0, 589828, 16, 0, 589829, 16, 0, 589830, 16, 0, 589831, 16, 0, 589832, 16, 0, 589833, 16, 0, 589834, 16, 0, 589835, 16, 0, 589836, 16, 0, 589837, 16, 0, 589838, 16, 0, 589839, 15, 0 )
@@ -17,6 +14,7 @@ tile_data = PoolIntArray( 0, 5, 0, 1, 6, 0, 2, 6, 0, 3, 6, 0, 4, 6, 0, 5, 6, 0, 
 
 [node name="AbilityOrb" parent="Orbs" instance=ExtResource( 4 )]
 position = Vector2( 128, 128 )
+Ability = 1
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 48, 80 )
@@ -35,9 +33,5 @@ drag_margin_bottom = 0.75
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
-[node name="PlayerHealth" parent="." instance=ExtResource( 3 )]
-margin_left = 16.0
-margin_top = 16.0
-margin_right = 16.0
-margin_bottom = 16.0
-PlayerNodePath = NodePath("../Player")
+[node name="GameManager" parent="." instance=ExtResource( 5 )]
+position = Vector2( 16, 16 )

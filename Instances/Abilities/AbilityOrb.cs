@@ -4,6 +4,7 @@ namespace DieWisely.Instances.Abilities
 {
     public enum Ability
     {
+        Empty,
         DoubleJump,
         Dash,
         WallJump,
