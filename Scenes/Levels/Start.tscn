@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Tilesets/PixelAdvantureTilemap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://UI/Fonts/TitleFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Scenes/Levels/PressToStart.cs" type="Script" id=3]
+[ext_resource path="res://Instances/Plate/Plate.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Instances/Gate/Gate.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Levels/OrbPickUpTutorial.tscn" type="PackedScene" id=6]
+[ext_resource path="res://UI/Background.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Levels/BasicMovementTutorial.tscn" type="PackedScene" id=8]
+
+[node name="BasicMovementTutorial" type="Node2D"]
+
+[node name="PixelAdvantureTilemap" parent="." instance=ExtResource( 1 )]
+tile_data = PoolIntArray( 0, 46, 0, 1, 44, 0, 2, 44, 0, 3, 44, 0, 4, 44, 0, 5, 44, 0, 6, 44, 0, 7, 44, 0, 8, 44, 0, 9, 44, 0, 10, 44, 0, 11, 44, 0, 12, 44, 0, 13, 44, 0, 14, 44, 0, 15, 49, 0, 65536, 42, 0, 65551, 40, 0, 131072, 42, 0, 131087, 40, 0, 196608, 42, 0, 196623, 40, 0, 262144, 42, 0, 262159, 40, 0, 327680, 42, 0, 327695, 40, 0, 393216, 42, 0, 393231, 40, 0, 458752, 42, 0, 458762, 0, 0, 458763, 63, 0, 458764, 63, 0, 458765, 63, 0, 458766, 63, 0, 458767, 40, 0, 524288, 42, 0, 524298, 65, 0, 524299, 66, 0, 524300, 73, 0, 524301, 74, 0, 524302, 66, 0, 524303, 40, 0, 589824, 47, 0, 589825, 38, 0, 589826, 38, 0, 589827, 38, 0, 589828, 38, 0, 589829, 38, 0, 589830, 38, 0, 589831, 38, 0, 589832, 38, 0, 589833, 38, 0, 589834, 38, 0, 589835, 38, 0, 589836, 38, 0, 589837, 38, 0, 589838, 38, 0, 589839, 48, 0 )
+
+[node name="Background" parent="." instance=ExtResource( 7 )]
+
+[node name="Plate" parent="." instance=ExtResource( 4 )]
+position = Vector2( 56, 136 )
+Hint = "Press A/D to move; K to jump"
+
+[node name="Gate" parent="." instance=ExtResource( 5 )]
+position = Vector2( 216, 112 )
+_nextScene = ExtResource( 6 )
+
+[node name="Title" type="Label" parent="."]
+margin_left = 64.0
+margin_top = 40.0
+margin_right = 192.0
+margin_bottom = 72.0
+custom_fonts/font = ExtResource( 2 )
+text = "Two Orbs"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PressToStart" type="Label" parent="."]
+margin_left = 64.0
+margin_top = 80.0
+margin_right = 192.0
+margin_bottom = 96.0
+text = "- Press Any Key To Start -"
+align = 1
+valign = 1
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+NextScene = ExtResource( 8 )

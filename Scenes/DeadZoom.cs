@@ -15,8 +15,10 @@ namespace DieWisely.Scenes
             _timer = GetNode<Timer>("Timer");
         }
 
-        private void _on_DeadZoom_body_entered(object body)
+        private void _on_DeadZoom_body_entered(Node body)
         {
+            if (!body.GetGroups().Contains("Player")) return;
+            body.QueueFree();
             _fallSfx.Play();
             _timer.Start();
         }

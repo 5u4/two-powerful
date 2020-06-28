@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Die Wisely"
-run/main_scene="res://Scenes/Levels/BasicMovementTutorial.tscn"
+run/main_scene="res://Scenes/Levels/Start.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -102,7 +102,7 @@ ui_info={
 
 [rendering]
 
-quality/driver/driver_name="GLES2"
+quality/driver/fallback_to_gles2=true
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
 environment/default_clear_color=Color( 0.341176, 0.329412, 0.435294, 1 )
