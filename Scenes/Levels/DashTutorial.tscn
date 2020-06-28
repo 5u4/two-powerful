@@ -19,7 +19,7 @@ tile_data = PoolIntArray( 65535, 76, 0, 0, 46, 0, 1, 44, 0, 2, 44, 0, 3, 44, 0, 
 
 [node name="Plate" parent="." instance=ExtResource( 3 )]
 position = Vector2( 72, 72 )
-Hint = "Press L to dash"
+Hint = "Press L + W/A/D to dash"
 
 [node name="Orbs" type="Node2D" parent="."]
 

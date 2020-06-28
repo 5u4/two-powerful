@@ -45,8 +45,9 @@ margin_bottom = 18.0
 text = "A/D: Move
 J: Attack
 K: Jump
-L: Dash
-I: Pick Up"
+L + W/A/D: Dash
+I: Pick Up
+R: Restart"
 __meta__ = {
 "_edit_use_anchors_": false
 }
