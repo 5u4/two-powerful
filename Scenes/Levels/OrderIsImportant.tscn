@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Tilesets/Tilemap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Instances/Abilities/AbilityOrb.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Instances/Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/GameManager.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Instances/Blocker/Blocker.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Instances/Plate/Plate.tscn" type="PackedScene" id=6]
+[ext_resource path="res://UI/Background.tscn" type="PackedScene" id=7]
+
+[node name="OrderIsImportant" type="Node2D"]
+
+[node name="Tilemap" parent="." instance=ExtResource( 1 )]
+tile_data = PoolIntArray( -1, 36, 0, -65536, 36, 0, -65535, 36, 0, -65534, 36, 0, -65533, 36, 0, -65532, 36, 0, -65531, 36, 0, -65530, 36, 0, -65529, 36, 0, -65528, 36, 0, -65527, 36, 0, -65526, 36, 0, -65525, 36, 0, -65524, 36, 0, -65523, 36, 0, -65522, 36, 0, -65521, 36, 0, -65520, 36, 0, 65535, 36, 0, 0, 36, 0, 1, 36, 0, 2, 36, 0, 3, 36, 0, 4, 36, 0, 5, 35, 0, 10, 31, 0, 15, 8, 0, 16, 36, 0, 131071, 36, 0, 65536, 20, 0, 65537, 22, 0, 65538, 23, 0, 65539, 36, 0, 65540, 36, 0, 65541, 21, 0, 65546, 31, 0, 65551, 8, 0, 65552, 36, 0, 196607, 36, 0, 131072, 21, 0, 131074, 32, 0, 131075, 23, 0, 131076, 20, 0, 131077, 34, 0, 131082, 31, 0, 131085, 30, 0, 131087, 8, 0, 131088, 36, 0, 262143, 36, 0, 196608, 21, 0, 196611, 32, 0, 196612, 34, 0, 196618, 31, 0, 196621, 35, 0, 196623, 8, 0, 196624, 36, 0, 327679, 36, 0, 262144, 35, 0, 262154, 32, 0, 262155, 33, 0, 262156, 33, 0, 262157, 34, 0, 262159, 8, 0, 262160, 36, 0, 393215, 36, 0, 327680, 1, 0, 327681, 1, 0, 327682, 1, 0, 327683, 1, 0, 327684, 1, 0, 327695, 9, 0, 327696, 36, 0, 458751, 36, 0, 393216, 21, 0, 393232, 36, 0, 524287, 36, 0, 458752, 21, 0, 458764, 2, 0, 458765, 4, 0, 458768, 36, 0, 589823, 36, 0, 524288, 21, 0, 524300, 14, 0, 524301, 13, 0, 524304, 36, 0, 655359, 36, 0, 589824, 3, 0, 589825, 3, 0, 589826, 3, 0, 589827, 3, 0, 589828, 3, 0, 589829, 3, 0, 589830, 3, 0, 589831, 3, 0, 589832, 3, 0, 589833, 3, 0, 589834, 3, 0, 589835, 3, 0, 589836, 15, 0, 589837, 17, 0, 589838, 16, 0, 589839, 16, 0, 589840, 36, 0, 720895, 36, 0, 655360, 36, 0, 655361, 36, 0, 655362, 36, 0, 655363, 36, 0, 655364, 36, 0, 655365, 36, 0, 655366, 36, 0, 655367, 36, 0, 655368, 36, 0, 655369, 36, 0, 655370, 36, 0, 655371, 36, 0, 655372, 36, 0, 655373, 36, 0, 655374, 36, 0, 655375, 36, 0, 655376, 36, 0 )
+
+[node name="Background" parent="." instance=ExtResource( 7 )]
+
+[node name="Orbs" type="Node2D" parent="."]
+
+[node name="AbilityOrb" parent="Orbs" instance=ExtResource( 2 )]
+position = Vector2( 104, 128 )
+Ability = 4
+
+[node name="AbilityOrb2" parent="Orbs" instance=ExtResource( 2 )]
+position = Vector2( 192, 48 )
+Ability = 1
+
+[node name="AbilityOrb3" parent="Orbs" instance=ExtResource( 2 )]
+position = Vector2( 240, 128 )
+Ability = 3
+
+[node name="Plate" parent="." instance=ExtResource( 6 )]
+position = Vector2( 56, 136 )
+Hint = "Order is important!"
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 32, 112 )
+
+[node name="GameManager" parent="." instance=ExtResource( 4 )]
+position = Vector2( 16, 16 )
+
+[node name="Blocker" parent="." instance=ExtResource( 5 )]
+position = Vector2( 56, 72 )

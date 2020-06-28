@@ -16,7 +16,7 @@ namespace DieWisely.Instances.Blocker
 
         public void Die()
         {
-            _collision.Disabled = true;
+            _collision.QueueFree();
             _animatedSprite.Play("death");
         }
 

@@ -32,6 +32,7 @@ namespace DieWisely.Instances.Abilities
 
         public override void _PhysicsProcess(float delta)
         {
+            UpdateTextDisplay();
             if (!_pickable || !Input.IsActionJustPressed("ui_pick")) return;
             EmitSignal(nameof(PickUpOrb), this);
         }
@@ -42,17 +43,21 @@ namespace DieWisely.Instances.Abilities
             _area2D.QueueFree();
         }
 
+        public void UpdateTextDisplay()
+        {
+            if (_pickable || Input.IsActionPressed("ui_info")) _abilityLabel.Show();
+            else _abilityLabel.Hide();
+        }
+
         private void _on_Area2D_body_entered(Node body)
         {
             if (!body.GetGroups().Contains("Player")) return;
-            _abilityLabel.Show();
             _pickable = true;
         }
 
         private void _on_Area2D_body_exited(Node body)
         {
             if (!body.GetGroups().Contains("Player")) return;
-            _abilityLabel.Hide();
             _pickable = false;
         }
 

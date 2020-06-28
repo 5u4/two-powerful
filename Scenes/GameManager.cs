@@ -11,6 +11,7 @@ namespace DieWisely.Scenes
         private Node2D _orbs;
         private Label _label1;
         private Label _label2;
+        private Label _instruction;
         private Ability _ability1;
         private Ability _ability2;
 
@@ -20,6 +21,7 @@ namespace DieWisely.Scenes
             _orbs = GetNodeOrNull<Node2D>("../Orbs");
             _label1 = GetNode<Label>("Control/Ability1");
             _label2 = GetNode<Label>("Control/Ability2");
+            _instruction = GetNode<Label>("Control/Instruction");
             if (_orbs != null)
             {
                 foreach (var orb in _orbs.GetChildren())
@@ -32,6 +34,7 @@ namespace DieWisely.Scenes
 
         public override void _Process(float delta)
         {
+            UpdateInstructionDisplay();
             if (!Input.IsActionJustPressed("ui_restart")) return;
             ReloadLevel();
         }
@@ -56,6 +59,12 @@ namespace DieWisely.Scenes
         {
             _label1.Text = _ability1.ToString();
             _label2.Text = _ability2.ToString();
+        }
+
+        private void UpdateInstructionDisplay()
+        {
+            if (Input.IsActionPressed("ui_info")) _instruction.Show();
+            else _instruction.Hide();
         }
 
         private void DisableAllAbilities()
