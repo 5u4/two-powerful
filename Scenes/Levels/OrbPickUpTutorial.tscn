@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Instances/Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Tilesets/Tilemap.tscn" type="PackedScene" id=2]
+[ext_resource path="res://UI/Background.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Instances/Abilities/AbilityOrb.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/GameManager.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Instances/Plate/Plate.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Instances/Gate/Gate.tscn" type="PackedScene" id=7]
+
+[node name="World" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource( 3 )]
+
+[node name="Tilemap" parent="." instance=ExtResource( 2 )]
+tile_data = PoolIntArray( 0, 5, 0, 1, 6, 0, 2, 6, 0, 3, 6, 0, 4, 6, 0, 5, 6, 0, 6, 6, 0, 7, 6, 0, 8, 6, 0, 9, 6, 0, 10, 6, 0, 11, 6, 0, 12, 6, 0, 13, 6, 0, 14, 6, 0, 15, 7, 0, 65536, 13, 0, 65551, 14, 0, 131072, 13, 0, 131087, 14, 0, 196608, 13, 0, 196623, 14, 0, 262144, 13, 0, 262159, 14, 0, 327680, 13, 0, 327692, 2, 0, 327693, 16, 0, 327694, 16, 0, 327695, 15, 0, 393216, 13, 0, 393228, 14, 0, 393229, 12, 0, 393230, 12, 0, 393231, 12, 0, 458752, 13, 0, 458764, 14, 0, 458765, 12, 0, 458766, 12, 0, 458767, 12, 0, 524288, 13, 0, 524300, 14, 0, 524301, 12, 0, 524302, 12, 0, 524303, 12, 0, 589824, 17, 0, 589825, 16, 0, 589826, 16, 0, 589827, 16, 0, 589828, 16, 0, 589829, 16, 0, 589830, 16, 0, 589831, 16, 0, 589832, 16, 0, 589833, 16, 0, 589834, 3, 0, 589835, 3, 0, 589836, 15, 0, 589837, 12, 0, 589838, 12, 0, 589839, 12, 0 )
+
+[node name="Plate" parent="." instance=ExtResource( 6 )]
+position = Vector2( 48, 136 )
+Hint = "Press I to pick up an orb"
+
+[node name="Orbs" type="Node2D" parent="."]
+
+[node name="AbilityOrb" parent="Orbs" instance=ExtResource( 4 )]
+position = Vector2( 80, 128 )
+Ability = 1
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 48, 80 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+limit_left = 0
+limit_top = 0
+limit_right = 256
+limit_bottom = 160
+smoothing_enabled = true
+drag_margin_left = 0.75
+drag_margin_top = 0.75
+drag_margin_right = 0.75
+drag_margin_bottom = 0.75
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
+[node name="GameManager" parent="." instance=ExtResource( 5 )]
+position = Vector2( 16, 16 )
+
+[node name="Gate" parent="." instance=ExtResource( 7 )]
+position = Vector2( 232, 80 )
+
+[node name="Plate2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 176, 136 )
+Hint = "DoubleJump let you jump once more in the air"

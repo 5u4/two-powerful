@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/GameManager.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Instances/Plate/Plate.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Instances/Gate/Gate.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/World.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Levels/OrbPickUpTutorial.tscn" type="PackedScene" id=6]
 
 [node name="BasicMovementTutorial" type="Node2D"]
 
