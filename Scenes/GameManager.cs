@@ -17,12 +17,15 @@ namespace DieWisely.Scenes
         public override void _Ready()
         {
             _player = GetNode<Player>("../Player");
-            _orbs = GetNode<Node2D>("../Orbs");
+            _orbs = GetNodeOrNull<Node2D>("../Orbs");
             _label1 = GetNode<Label>("Control/Ability1");
             _label2 = GetNode<Label>("Control/Ability2");
-            foreach (var orb in _orbs.GetChildren())
+            if (_orbs != null)
             {
-                (orb as AbilityOrb)?.Connect("PickUpOrb", this, nameof(_on_OrbPickUp));
+                foreach (var orb in _orbs.GetChildren())
+                {
+                    (orb as AbilityOrb)?.Connect("PickUpOrb", this, nameof(_on_OrbPickUp));
+                }
             }
             UpdateLabels();
         }

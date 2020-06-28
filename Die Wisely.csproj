@@ -58,6 +58,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Instances\Abilities\AbilityOrb.cs" />
+    <Compile Include="Instances\Gate\Gate.cs" />
+    <Compile Include="Instances\Plate\Plate.cs" />
     <Compile Include="Instances\Player\ActionLockTimer.cs" />
     <Compile Include="Instances\Player\Health.cs" />
     <Compile Include="Instances\Player\Player.cs" />
