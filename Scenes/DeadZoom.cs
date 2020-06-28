@@ -1,6 +1,6 @@
 using Godot;
 
-namespace DieWisely.Scenes
+namespace TwoOrbs.Scenes
 {
     public class DeadZoom : Area2D
     {

@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-namespace DieWisely.Instances.Player
+namespace TwoOrbs.Instances.Player
 {
     public class PlayerRun : Node2D
     {

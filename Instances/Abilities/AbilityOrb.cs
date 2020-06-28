@@ -1,6 +1,6 @@
 using Godot;
 
-namespace DieWisely.Instances.Abilities
+namespace TwoOrbs.Instances.Abilities
 {
     public enum Ability
     {

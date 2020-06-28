@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Die Wisely"
+config/name="Two Orbs"
 run/main_scene="res://Scenes/Levels/Start.tscn"
 config/icon="res://icon.png"
 

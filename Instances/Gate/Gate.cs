@@ -1,6 +1,6 @@
 using Godot;
 
-namespace DieWisely.Instances.Gate
+namespace TwoOrbs.Instances.Gate
 {
     public class Gate : Node2D
     {

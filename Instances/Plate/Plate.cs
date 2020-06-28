@@ -1,6 +1,6 @@
 using Godot;
 
-namespace DieWisely.Instances.Plate
+namespace TwoOrbs.Instances.Plate
 {
     public class Plate : Node2D
     {

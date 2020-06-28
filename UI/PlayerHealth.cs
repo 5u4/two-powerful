@@ -1,7 +1,7 @@
-using DieWisely.Instances.Player;
+using TwoOrbs.Instances.Player;
 using Godot;
 
-namespace DieWisely.UI
+namespace TwoOrbs.UI
 {
     public class PlayerHealth : Control
     {

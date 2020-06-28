@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Die Wisely", "Die Wisely.csproj", "{C73FA693-6091-4672-A218-AEEDFC7F59CB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Two Orbs", "Two Orbs.csproj", "{C73FA693-6091-4672-A218-AEEDFC7F59CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

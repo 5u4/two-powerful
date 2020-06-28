@@ -6,8 +6,8 @@
     <ProjectGuid>{C73FA693-6091-4672-A218-AEEDFC7F59CB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <OutputPath>.mono/temp/bin/$(Configuration)</OutputPath>
-    <RootNamespace>DieWisely</RootNamespace>
-    <AssemblyName>Die Wisely</AssemblyName>
+    <RootNamespace>TwoOrbs</RootNamespace>
+    <AssemblyName>Two Orbs</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <GodotProjectGeneratorVersion>1.0.0.0</GodotProjectGeneratorVersion>
     <BaseIntermediateOutputPath>.mono/temp/obj</BaseIntermediateOutputPath>

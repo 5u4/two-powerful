@@ -1,6 +1,6 @@
 using Godot;
 
-namespace DieWisely.Instances.Player
+namespace TwoOrbs.Instances.Player
 {
     public class Player : KinematicBody2D
     {

@@ -1,9 +1,9 @@
 using System;
-using DieWisely.Instances.Abilities;
-using DieWisely.Instances.Player;
+using TwoOrbs.Instances.Abilities;
+using TwoOrbs.Instances.Player;
 using Godot;
 
-namespace DieWisely.Scenes
+namespace TwoOrbs.Scenes
 {
     public class GameManager : Node2D
     {

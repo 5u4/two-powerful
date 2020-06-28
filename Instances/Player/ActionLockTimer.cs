@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-namespace DieWisely.Instances.Player
+namespace TwoOrbs.Instances.Player
 {
     public delegate void ActionCallback();
 

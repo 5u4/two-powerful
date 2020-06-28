@@ -1,6 +1,6 @@
 using Godot;
 
-namespace DieWisely.Instances.Blocker
+namespace TwoOrbs.Instances.Blocker
 {
     public class Blocker : KinematicBody2D
     {

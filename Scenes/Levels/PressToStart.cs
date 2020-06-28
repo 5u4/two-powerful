@@ -1,6 +1,6 @@
 using Godot;
 
-namespace DieWisely.Scenes.Levels
+namespace TwoOrbs.Scenes.Levels
 {
     public class PressToStart : Label
     {
