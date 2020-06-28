@@ -19,6 +19,10 @@ config/name="Die Wisely"
 run/main_scene="res://Scenes/Levels/BasicMovementTutorial.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+BackgroundMusic="*res://Scenes/BackgroundMusic.tscn"
+
 [display]
 
 window/size/width=256
