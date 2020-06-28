@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Tilesets/PixelAdvantureTilemap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://UI/Fonts/TitleFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Assets/UI/wooden_plate.png" type="Texture" id=3]
+[ext_resource path="res://UI/Background.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/UI/door.png" type="Texture" id=8]
+
+[node name="BasicMovementTutorial" type="Node2D"]
+
+[node name="PixelAdvantureTilemap" parent="." instance=ExtResource( 1 )]
+tile_data = PoolIntArray( 0, 46, 0, 1, 44, 0, 2, 44, 0, 3, 44, 0, 4, 44, 0, 5, 44, 0, 6, 44, 0, 7, 44, 0, 8, 44, 0, 9, 44, 0, 10, 44, 0, 11, 44, 0, 12, 44, 0, 13, 44, 0, 14, 44, 0, 15, 49, 0, 65536, 42, 0, 65551, 40, 0, 131072, 42, 0, 131087, 40, 0, 196608, 42, 0, 196623, 40, 0, 262144, 42, 0, 262159, 40, 0, 327680, 42, 0, 327695, 40, 0, 393216, 42, 0, 393231, 40, 0, 458752, 42, 0, 458762, 0, 0, 458763, 63, 0, 458764, 63, 0, 458765, 63, 0, 458766, 63, 0, 458767, 40, 0, 524288, 42, 0, 524298, 65, 0, 524299, 66, 0, 524300, 73, 0, 524301, 74, 0, 524302, 66, 0, 524303, 40, 0, 589824, 47, 0, 589825, 38, 0, 589826, 38, 0, 589827, 38, 0, 589828, 38, 0, 589829, 38, 0, 589830, 38, 0, 589831, 38, 0, 589832, 38, 0, 589833, 38, 0, 589834, 38, 0, 589835, 38, 0, 589836, 38, 0, 589837, 38, 0, 589838, 38, 0, 589839, 48, 0 )
+
+[node name="Background" parent="." instance=ExtResource( 7 )]
+
+[node name="Plate" type="Sprite" parent="."]
+position = Vector2( 56, 136 )
+texture = ExtResource( 3 )
+
+[node name="Gate" type="Sprite" parent="."]
+position = Vector2( 216, 96 )
+texture = ExtResource( 8 )
+offset = Vector2( 0, 4 )
+
+[node name="Title" type="Label" parent="."]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 240.0
+margin_bottom = 48.0
+custom_fonts/font = ExtResource( 2 )
+text = "Thanks for Playing"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PressToStart" type="Label" parent="."]
+margin_left = 16.0
+margin_top = 48.0
+margin_right = 240.0
+margin_bottom = 144.0
+text = "Made by Senhung
+
+With Assets
+- PIXEL ART PLATFORM/METROIDVANIA ASSET PACK -
+- Pixel Adventure 1 -
+- m3x6.ttf -"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Tilesets/PixelAdvantureTilemap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://UI/Background.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Instances/Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/GameManager.tscn" type="PackedScene" id=4]
+
+[node name="Larger" type="Node2D"]
+
+[node name="PixelAdvantureTilemap" parent="." instance=ExtResource( 1 )]
+tile_data = PoolIntArray( 458751, 76, 0, 393216, 76, 0, 393217, 76, 0, 393218, 76, 0, 393219, 76, 0, 524287, 76, 0, 589823, 76, 0, 524295, 76, 0, 655359, 76, 0, 589831, 76, 0, 589832, 76, 0, 720895, 76, 0, 655360, 76, 0, 655361, 76, 0, 655362, 76, 0, 655368, 76, 0, 655369, 76, 0, 655370, 76, 0, 655371, 76, 0, 786431, 76, 0, 720896, 76, 0, 720897, 76, 0, 720898, 76, 0, 720911, 76, 0, 786434, 76, 0, 786447, 76, 0, 851970, 76, 0, 851974, 76, 0, 851979, 76, 0, 851983, 76, 0, 917506, 76, 0, 917510, 76, 0, 917515, 76, 0, 917519, 76, 0, 983042, 76, 0, 983043, 76, 0, 983044, 76, 0, 983045, 76, 0, 983046, 76, 0, 983051, 76, 0, 983052, 76, 0, 983053, 76, 0, 983054, 76, 0, 983055, 76, 0 )
+
+[node name="Background" parent="." instance=ExtResource( 2 )]
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 16, 136 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+
+[node name="GameManager" parent="." instance=ExtResource( 4 )]
+position = Vector2( -48, 16 )
