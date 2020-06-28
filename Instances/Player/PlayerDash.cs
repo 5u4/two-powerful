@@ -37,6 +37,8 @@ namespace DieWisely.Instances.Player
             
             _player.ActionLockTimer.Lock(DashDuration, FinishDash);
             
+            _player.DashSfx.Play();
+            
             _player.Gravity.Enabled = false;
             IsDashing = true;
             _dashCount--;

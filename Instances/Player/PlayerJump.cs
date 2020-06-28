@@ -20,6 +20,7 @@ namespace DieWisely.Instances.Player
             if (_player.IsOnFloor()) _jumpCount = _maxJumpCount;
             if (!Input.IsActionJustPressed("ui_jump") || _jumpCount <= 0 || _player.ActionLockTimer.IsLocked ||
                 _player.WallJump.WillWallJump()) return;
+            _player.JumpSfx.Play();
             _player.Velocity.y = -JumpHeight;
             _jumpCount--;
             _player.WallJump.IsWallJumping = false;

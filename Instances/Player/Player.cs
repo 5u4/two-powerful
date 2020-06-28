@@ -12,6 +12,10 @@ namespace DieWisely.Instances.Player
         public PlayerAttack Attack;
         public PlayerWallJump WallJump;
         public ActionLockTimer ActionLockTimer;
+        public AudioStreamPlayer2D JumpSfx;
+        public AudioStreamPlayer2D AttackSfx;
+        public AudioStreamPlayer2D DashSfx;
+        public AudioStreamPlayer2D EnterSfx;
         public Vector2 Velocity = Vector2.Zero;
 
         public int Health { get; private set; }
@@ -28,6 +32,11 @@ namespace DieWisely.Instances.Player
             Attack = GetNode<PlayerAttack>("Attack");
             WallJump = GetNode<PlayerWallJump>("WallJump");
             ActionLockTimer = GetNode<ActionLockTimer>("ActionLockTimer");
+            JumpSfx = GetNode<AudioStreamPlayer2D>("JumpSfx");
+            AttackSfx = GetNode<AudioStreamPlayer2D>("AttackSfx");
+            DashSfx = GetNode<AudioStreamPlayer2D>("DashSfx");
+            EnterSfx = GetNode<AudioStreamPlayer2D>("EnterSfx");
+            EnterSfx.Play();
         }
 
         public override void _PhysicsProcess(float delta)

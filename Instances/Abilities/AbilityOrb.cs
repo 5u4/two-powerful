@@ -17,6 +17,7 @@ namespace DieWisely.Instances.Abilities
         private AnimatedSprite _animatedSprite;
         private Label _abilityLabel;
         private Area2D _area2D;
+        private AudioStreamPlayer2D _pickUpSfx;
 
         [Signal] public delegate void PickUpOrb(AbilityOrb orb);
         [Export] public Ability Ability;
@@ -28,6 +29,7 @@ namespace DieWisely.Instances.Abilities
             _abilityLabel = GetNode<Label>("Label");
             _abilityLabel.Text = Ability.ToString();
             _area2D = GetNode<Area2D>("Area2D");
+            _pickUpSfx = GetNode<AudioStreamPlayer2D>("PickUpSfx");
         }
 
         public override void _PhysicsProcess(float delta)
@@ -39,6 +41,7 @@ namespace DieWisely.Instances.Abilities
 
         public void PickedUp()
         {
+            _pickUpSfx.Play();
             _animatedSprite.Play("pickedup");
             _area2D.QueueFree();
         }

@@ -21,7 +21,6 @@ namespace DieWisely.Instances.Player
         {
             if (_player.IsOnFloor()) IsWallJumping = false;
             if (WillWallJump()) WallJump();
-
         }
 
         public bool WillWallJump()
@@ -32,6 +31,7 @@ namespace DieWisely.Instances.Player
 
         private void WallJump()
         {
+            _player.JumpSfx.Play();
             IsWallJumping = true;
             var horizontal = Input.GetActionStrength("ui_left") - Input.GetActionStrength("ui_right");
             _player.Velocity.x = horizontal * JumpSpeed;

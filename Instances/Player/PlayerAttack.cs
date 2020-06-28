@@ -41,6 +41,7 @@ namespace DieWisely.Instances.Player
 
         private void Attack()
         {
+            _player.AttackSfx.Play();
             _hitBox.Position = new Vector2(_player.AnimatedSprite.FlipH ? -_hitBoxOriginalX : _hitBoxOriginalX, 0);
             _hitCollision.Disabled = false;
             IsAttacking = true;
