@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Tilesets/Tilemap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Instances/Abilities/AbilityOrb.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Instances/Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Instances/Plate/Plate.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/GameManager.tscn" type="PackedScene" id=5]
+[ext_resource path="res://UI/Background.tscn" type="PackedScene" id=6]
+
+[node name="WallJumpTutorial" type="Node2D"]
+
+[node name="Tilemap" parent="." instance=ExtResource( 1 )]
+tile_data = PoolIntArray( 0, 5, 0, 1, 6, 0, 2, 6, 0, 3, 6, 0, 4, 6, 0, 5, 6, 0, 6, 6, 0, 7, 6, 0, 8, 6, 0, 9, 7, 0, 10, 5, 0, 11, 10, 0, 12, 10, 0, 13, 10, 0, 14, 10, 0, 15, 7, 0, 65536, 13, 0, 65545, 8, 0, 65546, 13, 0, 65551, 14, 0, 131072, 13, 0, 131081, 8, 0, 131082, 13, 0, 131087, 8, 0, 196608, 13, 0, 196617, 8, 0, 196618, 13, 0, 196623, 14, 0, 262144, 13, 0, 262153, 8, 0, 262154, 13, 0, 262157, 2, 0, 262158, 16, 0, 262159, 15, 0, 327680, 13, 0, 327689, 8, 0, 327690, 13, 0, 327693, 8, 0, 327694, 12, 0, 327695, 12, 0, 393216, 13, 0, 393225, 9, 0, 393226, 11, 0, 393229, 8, 0, 393230, 12, 0, 393231, 12, 0, 458752, 13, 0, 458765, 8, 0, 458766, 12, 0, 458767, 12, 0, 524288, 13, 0, 524301, 8, 0, 524302, 12, 0, 524303, 12, 0, 589824, 17, 0, 589825, 3, 0, 589826, 3, 0, 589827, 3, 0, 589828, 3, 0, 589829, 3, 0, 589830, 3, 0, 589831, 3, 0, 589832, 3, 0, 589833, 3, 0, 589834, 3, 0, 589835, 3, 0, 589836, 3, 0, 589837, 15, 0, 589838, 12, 0, 589839, 12, 0 )
+
+[node name="Background" parent="." instance=ExtResource( 6 )]
+
+[node name="Orbs" type="Node2D" parent="."]
+
+[node name="AbilityOrb" parent="Orbs" instance=ExtResource( 2 )]
+position = Vector2( 120, 128 )
+Ability = 3
+
+[node name="Plate" parent="." instance=ExtResource( 4 )]
+position = Vector2( 160, 136 )
+Hint = "WallJump let you jump away from a wall when snap on the wall"
+
+[node name="Plate" parent="Plate" instance=ExtResource( 4 )]
+position = Vector2( -112, 0 )
+Hint = "Orbs from previous level won't be kept"
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 48, 88 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+visible = false
+limit_left = 0
+limit_top = 0
+limit_right = 256
+limit_bottom = 160
+
+[node name="GameManager" parent="." instance=ExtResource( 5 )]
+position = Vector2( 16, 16 )
