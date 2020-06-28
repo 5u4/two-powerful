@@ -17,6 +17,8 @@ _global_script_class_icons={
 
 config/name="Two Orbs"
 run/main_scene="res://Scenes/Levels/Start.tscn"
+boot_splash/image="res://Splash.png"
+boot_splash/bg_color=Color( 0.129412, 0.121569, 0.188235, 1 )
 config/icon="res://icon.png"
 
 [autoload]
