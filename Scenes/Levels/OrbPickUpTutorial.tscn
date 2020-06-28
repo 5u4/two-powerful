@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Instances/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Tilesets/Tilemap.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Instances/Plate/Plate.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Instances/Gate/Gate.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Levels/WallJumpTutorial.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/LevelNote.tscn" type="PackedScene" id=9]
 
 [node name="World" type="Node2D"]
 
@@ -53,3 +54,6 @@ _nextScene = ExtResource( 8 )
 [node name="Plate2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 176, 136 )
 Hint = "DoubleJump let you jump once more in the air"
+
+[node name="LevelNote" parent="." instance=ExtResource( 9 )]
+Note = "- Oh, a higher door -"

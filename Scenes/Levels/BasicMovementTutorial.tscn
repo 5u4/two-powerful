@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Tilesets/PixelAdvantureTilemap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Instances/Player/Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Instances/Gate/Gate.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Levels/OrbPickUpTutorial.tscn" type="PackedScene" id=6]
 [ext_resource path="res://UI/Background.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/LevelNote.tscn" type="PackedScene" id=8]
 
 [node name="BasicMovementTutorial" type="Node2D"]
 
@@ -38,3 +39,6 @@ Hint = "Press A/D to move; K to jump"
 [node name="Gate" parent="." instance=ExtResource( 5 )]
 position = Vector2( 216, 112 )
 _nextScene = ExtResource( 6 )
+
+[node name="LevelNote" parent="." instance=ExtResource( 8 )]
+Note = "- Will curiosity take you to the door? -"

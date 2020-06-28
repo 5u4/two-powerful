@@ -39,9 +39,9 @@ __meta__ = {
 
 [node name="PressToStart" type="Label" parent="."]
 margin_left = 16.0
-margin_top = 48.0
+margin_top = 16.0
 margin_right = 240.0
-margin_bottom = 144.0
+margin_bottom = 112.0
 text = "Made by Senhung
 
 - Press K for a REAL CHALLENGE -"
