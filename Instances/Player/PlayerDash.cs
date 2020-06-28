@@ -51,7 +51,7 @@ namespace DieWisely.Instances.Player
 
         private bool WillDash()
         {
-            return Enabled && Input.IsActionJustPressed("ui_dash") && _dashCount <= 0 && !_player.ActionLockTimer.IsLocked;
+            return Enabled && Input.IsActionJustPressed("ui_dash") && _dashCount > 0 && !_player.ActionLockTimer.IsLocked;
         }
     }
 }

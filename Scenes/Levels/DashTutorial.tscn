@@ -1,0 +1,35 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Tilesets/Tilemap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Instances/Abilities/AbilityOrb.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Instances/Plate/Plate.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Instances/Player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/GameManager.tscn" type="PackedScene" id=5]
+[ext_resource path="res://UI/Background.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/DeadZoom.tscn" type="PackedScene" id=7]
+
+[node name="DashTutorial" type="Node2D"]
+
+[node name="Tilemap" parent="." instance=ExtResource( 1 )]
+tile_data = PoolIntArray( 65535, 12, 0, 0, 10, 0, 1, 10, 0, 2, 10, 0, 3, 10, 0, 4, 10, 0, 5, 10, 0, 6, 10, 0, 7, 10, 0, 8, 10, 0, 9, 10, 0, 10, 10, 0, 11, 10, 0, 12, 10, 0, 13, 10, 0, 14, 10, 0, 15, 10, 0, 16, 12, 0, 131071, 12, 0, 65552, 12, 0, 196607, 12, 0, 131088, 12, 0, 262143, 12, 0, 196624, 12, 0, 327679, 12, 0, 262155, 2, 0, 262156, 16, 0, 262157, 16, 0, 262158, 16, 0, 262159, 16, 0, 262160, 12, 0, 393215, 12, 0, 327680, 16, 0, 327681, 16, 0, 327682, 16, 0, 327683, 16, 0, 327684, 4, 0, 327691, 8, 0, 327692, 12, 0, 327693, 12, 0, 327694, 12, 0, 327695, 12, 0, 327696, 12, 0, 458751, 12, 0, 393216, 12, 0, 393217, 12, 0, 393218, 12, 0, 393219, 12, 0, 393220, 13, 0, 393227, 8, 0, 393228, 12, 0, 393229, 12, 0, 393230, 12, 0, 393231, 12, 0, 393232, 12, 0, 524287, 12, 0, 458752, 12, 0, 458753, 12, 0, 458754, 12, 0, 458755, 12, 0, 458756, 13, 0, 458763, 8, 0, 458764, 12, 0, 458765, 12, 0, 458766, 12, 0, 458767, 12, 0, 458768, 12, 0, 589823, 12, 0, 524288, 12, 0, 524289, 12, 0, 524290, 12, 0, 524291, 12, 0, 524292, 13, 0, 524299, 8, 0, 524300, 12, 0, 524301, 12, 0, 524302, 12, 0, 524303, 12, 0, 524304, 12, 0, 655359, 12, 0, 589824, 12, 0, 589825, 12, 0, 589826, 12, 0, 589827, 12, 0, 589828, 13, 0, 589835, 8, 0, 589836, 12, 0, 589837, 12, 0, 589838, 12, 0, 589839, 12, 0, 589840, 12, 0 )
+
+[node name="Background" parent="." instance=ExtResource( 6 )]
+
+[node name="Plate" parent="." instance=ExtResource( 3 )]
+position = Vector2( 72, 72 )
+Hint = "Press L to dash"
+
+[node name="Orbs" type="Node2D" parent="."]
+
+[node name="AbilityOrb" parent="Orbs" instance=ExtResource( 2 )]
+position = Vector2( 56, 64 )
+Ability = 2
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 8, 40 )
+
+[node name="GameManager" parent="." instance=ExtResource( 5 )]
+position = Vector2( 16, 16 )
+
+[node name="DeadZoom" parent="." instance=ExtResource( 7 )]
+position = Vector2( 128, 176 )

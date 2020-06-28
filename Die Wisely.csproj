@@ -71,6 +71,7 @@
     <Compile Include="Instances\Player\PlayerRun.cs" />
     <Compile Include="Instances\Player\PlayerWallJump.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scenes\DeadZoom.cs" />
     <Compile Include="Scenes\GameManager.cs" />
     <Compile Include="UI\PlayerHealth.cs" />
   </ItemGroup>

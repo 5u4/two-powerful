@@ -30,6 +30,11 @@ namespace DieWisely.Scenes
             UpdateLabels();
         }
 
+        public void ReloadLevel()
+        {
+            GetTree().ReloadCurrentScene();
+        }
+
         private void _on_OrbPickUp(AbilityOrb orb)
         {
             _ability2 = _ability1;
