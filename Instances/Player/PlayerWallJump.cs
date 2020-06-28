@@ -7,7 +7,7 @@ namespace TwoOrbs.Instances.Player
         private Player _player;
 
         private const float JumpSpeed = 150;
-        private const float LockDuration = 0.2f;
+        private const float LockDuration = 0.3f;
     
         public bool Enabled { get; set; }
         public bool IsWallJumping { get; set; }

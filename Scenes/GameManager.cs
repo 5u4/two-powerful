@@ -19,9 +19,9 @@ namespace TwoOrbs.Scenes
         {
             _player = GetNode<Player>("../Player");
             _orbs = GetNodeOrNull<Node2D>("../Orbs");
-            _label1 = GetNode<Label>("Control/Ability1");
-            _label2 = GetNode<Label>("Control/Ability2");
-            _instruction = GetNode<Label>("Control/Instruction");
+            _label1 = GetNode<Label>("CanvasLayer/Control/Ability1");
+            _label2 = GetNode<Label>("CanvasLayer/Control/Ability2");
+            _instruction = GetNode<Label>("CanvasLayer/Control/Instruction");
             if (_orbs != null)
             {
                 foreach (var orb in _orbs.GetChildren())

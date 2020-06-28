@@ -75,6 +75,7 @@
     <Compile Include="Scenes\DeadZoom.cs" />
     <Compile Include="Scenes\GameManager.cs" />
     <Compile Include="Scenes\Levels\PressToStart.cs" />
+    <Compile Include="Scenes\Levels\PressToStartFinal.cs" />
     <Compile Include="UI\PlayerHealth.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -5,9 +5,12 @@
 [ext_resource path="res://Assets/UI/bg_2.png" type="Texture" id=3]
 
 [node name="Background" type="ParallaxBackground"]
-scroll_base_scale = Vector2( 0.1, 1 )
+scroll_base_scale = Vector2( 0.5, 1 )
+scroll_limit_begin = Vector2( -1024, 0 )
+scroll_limit_end = Vector2( 1024, 160 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.2, 1 )
 motion_mirroring = Vector2( 240, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxLayer"]
@@ -15,6 +18,7 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.5, 1 )
 motion_mirroring = Vector2( 240, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxLayer2"]
@@ -22,6 +26,7 @@ texture = ExtResource( 2 )
 centered = false
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.8, 1 )
 motion_mirroring = Vector2( 240, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxLayer3"]
