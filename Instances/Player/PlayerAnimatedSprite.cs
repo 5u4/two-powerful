@@ -7,7 +7,7 @@ namespace DieWisely.Instances.Player
     {
         private Player _player;
         private bool _borning = true;
-    
+
         private const float RunningThreshold = 10f;
 
         public override void _Ready()

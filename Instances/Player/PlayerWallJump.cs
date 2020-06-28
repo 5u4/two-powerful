@@ -26,7 +26,8 @@ namespace DieWisely.Instances.Player
 
         public bool WillWallJump()
         {
-            return Enabled && Input.IsActionJustPressed("ui_jump") && !_player.IsOnFloor() && _player.IsOnWall();
+            return Enabled && Input.IsActionJustPressed("ui_jump") && !_player.IsOnFloor() && _player.IsOnWall() &&
+                   !_player.ActionLockTimer.IsLocked;
         }
 
         private void WallJump()

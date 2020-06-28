@@ -28,6 +28,15 @@ namespace DieWisely.Instances.Player
 
         private void Dash()
         {
+            void FinishDash()
+            {
+                _player.Gravity.Enabled = true;
+                _player.Velocity = Vector2.Zero;
+                IsDashing = false;
+            }
+            
+            _player.ActionLockTimer.Lock(DashDuration, FinishDash);
+            
             _player.Gravity.Enabled = false;
             IsDashing = true;
             _dashCount--;
@@ -38,15 +47,6 @@ namespace DieWisely.Instances.Player
         
             _player.Velocity.x = horizontal * DashSpeed;
             _player.Velocity.y = vertical * DashSpeed;
-
-            void FinishDash()
-            {
-                _player.Gravity.Enabled = true;
-                _player.Velocity = Vector2.Zero;
-                IsDashing = false;
-            }
-
-            _player.ActionLockTimer.Lock(DashDuration, FinishDash);
         }
 
         private bool WillDash()

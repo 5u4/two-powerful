@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Instances\Abilities\AbilityOrb.cs" />
+    <Compile Include="Instances\Blocker\Blocker.cs" />
     <Compile Include="Instances\Gate\Gate.cs" />
     <Compile Include="Instances\Plate\Plate.cs" />
     <Compile Include="Instances\Player\ActionLockTimer.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="UI\PlayerHealth.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Instances\Blocker" />
     <Folder Include="UI" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

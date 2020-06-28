@@ -30,6 +30,12 @@ namespace DieWisely.Scenes
             UpdateLabels();
         }
 
+        public override void _Process(float delta)
+        {
+            if (!Input.IsActionJustPressed("ui_restart")) return;
+            ReloadLevel();
+        }
+
         public void ReloadLevel()
         {
             GetTree().ReloadCurrentScene();
