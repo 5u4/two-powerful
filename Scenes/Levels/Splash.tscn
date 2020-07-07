@@ -169,14 +169,13 @@ tile_data = PoolIntArray( 65538, 46, 0, 65539, 44, 0, 65540, 44, 0, 65541, 44, 0
 [node name="Blocker" type="AnimatedSprite" parent="."]
 position = Vector2( 44.5, 9 )
 frames = SubResource( 7 )
-frame = 4
+frame = 1
 playing = true
 flip_h = true
 
 [node name="Player" type="AnimatedSprite" parent="."]
 position = Vector2( -32, 40 )
 frames = SubResource( 12 )
-frame = 2
 playing = true
 
 [node name="plate" type="Sprite" parent="."]
