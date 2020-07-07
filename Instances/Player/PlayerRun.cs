@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-namespace TwoOrbs.Instances.Player
+namespace TwoPowerful.Instances.Player
 {
     public class PlayerRun : Node2D
     {

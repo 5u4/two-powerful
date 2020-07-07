@@ -1,6 +1,6 @@
 using Godot;
 
-namespace TwoOrbs.Instances.Abilities
+namespace TwoPowerful.Instances.Abilities
 {
     public enum Ability
     {

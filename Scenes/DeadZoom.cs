@@ -1,6 +1,6 @@
 using Godot;
 
-namespace TwoOrbs.Scenes
+namespace TwoPowerful.Scenes
 {
     public class DeadZoom : Area2D
     {

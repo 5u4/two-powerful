@@ -1,6 +1,6 @@
 using Godot;
 
-namespace TwoOrbs.Instances.Gate
+namespace TwoPowerful.Instances.Gate
 {
     public class Gate : Node2D
     {

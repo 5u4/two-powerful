@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-namespace TwoOrbs.Instances.Player
+namespace TwoPowerful.Instances.Player
 {
     public delegate void ActionCallback();
 

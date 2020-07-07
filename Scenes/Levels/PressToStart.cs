@@ -1,6 +1,6 @@
 using Godot;
 
-namespace TwoOrbs.Scenes.Levels
+namespace TwoPowerful.Scenes.Levels
 {
     public class PressToStart : Label
     {

@@ -1,7 +1,7 @@
-using TwoOrbs.Instances.Player;
+using TwoPowerful.Instances.Player;
 using Godot;
 
-namespace TwoOrbs.UI
+namespace TwoPowerful.UI
 {
     public class PlayerHealth : Control
     {

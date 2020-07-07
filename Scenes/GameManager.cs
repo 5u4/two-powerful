@@ -1,9 +1,9 @@
 using System;
-using TwoOrbs.Instances.Abilities;
-using TwoOrbs.Instances.Player;
+using TwoPowerful.Instances.Abilities;
+using TwoPowerful.Instances.Player;
 using Godot;
 
-namespace TwoOrbs.Scenes
+namespace TwoPowerful.Scenes
 {
     public class GameManager : Node2D
     {

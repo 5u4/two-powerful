@@ -1,6 +1,6 @@
 using Godot;
 
-namespace TwoOrbs.Instances.Blocker
+namespace TwoPowerful.Instances.Blocker
 {
     public class Blocker : KinematicBody2D
     {

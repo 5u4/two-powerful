@@ -1,6 +1,6 @@
 using Godot;
 
-namespace TwoOrbs.Instances.Plate
+namespace TwoPowerful.Instances.Plate
 {
     public class Plate : Node2D
     {

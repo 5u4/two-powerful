@@ -1,6 +1,6 @@
 using Godot;
 
-namespace TwoOrbs.Instances.Player
+namespace TwoPowerful.Instances.Player
 {
     public class Player : KinematicBody2D
     {
