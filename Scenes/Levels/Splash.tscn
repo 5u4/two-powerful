@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://UI/Fonts/SplashFont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/Instances/Player/herochar_idle_anim_strip_4.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Assets/UI/grass_props.png" type="Texture" id=12]
 [ext_resource path="res://Assets/UI/vase.png" type="Texture" id=13]
 [ext_resource path="res://Assets/UI/bigflowers_props.png" type="Texture" id=14]
+[ext_resource path="res://Scenes/Levels/Splash.cs" type="Script" id=15]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 10 )
@@ -138,7 +139,7 @@ shader_param/displacement = 2.0
 shader_param/speed = 4.0
 
 [node name="Splash" type="Node2D"]
-position = Vector2( 29.5, 45 )
+script = ExtResource( 15 )
 __meta__ = {
 "_editor_description_": "Width: 315
 Height: 250
@@ -147,45 +148,48 @@ Test Height: 500"
 }
 
 [node name="bg0" type="Sprite" parent="."]
-position = Vector2( 128, 80 )
+position = Vector2( 7.62939e-06, 5.72205e-06 )
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 3 )
 
 [node name="bg1" type="Sprite" parent="."]
-position = Vector2( 128, 80 )
+position = Vector2( 7.62939e-06, 5.72205e-06 )
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 6 )
 
 [node name="bg2" type="Sprite" parent="."]
-position = Vector2( 128, 80 )
+position = Vector2( 7.62939e-06, 5.72205e-06 )
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 4 )
 
 [node name="PixelAdvantureTilemap" parent="." instance=ExtResource( 5 )]
+position = Vector2( -128, -80 )
 tile_data = PoolIntArray( 65538, 46, 0, 65539, 44, 0, 65540, 44, 0, 65541, 44, 0, 65542, 44, 0, 65543, 44, 0, 65544, 44, 0, 65545, 44, 0, 65546, 44, 0, 65547, 44, 0, 65548, 44, 0, 65549, 49, 0, 131074, 42, 0, 131085, 40, 0, 196610, 42, 0, 196621, 40, 0, 262146, 42, 0, 262157, 40, 0, 327682, 42, 0, 327693, 40, 0, 393218, 42, 0, 393224, 13, 0, 393225, 14, 0, 393226, 14, 0, 393227, 14, 0, 393228, 14, 0, 393229, 40, 0, 458754, 42, 0, 458760, 16, 0, 458761, 17, 0, 458762, 17, 0, 458763, 17, 0, 458764, 17, 0, 458765, 40, 0, 524290, 47, 0, 524291, 38, 0, 524292, 38, 0, 524293, 38, 0, 524294, 38, 0, 524295, 38, 0, 524296, 38, 0, 524297, 38, 0, 524298, 38, 0, 524299, 38, 0, 524300, 38, 0, 524301, 48, 0 )
 
 [node name="Blocker" type="AnimatedSprite" parent="."]
-position = Vector2( 172.5, 89 )
+position = Vector2( 44.5, 9 )
 frames = SubResource( 7 )
+frame = 4
 playing = true
 flip_h = true
 
 [node name="Player" type="AnimatedSprite" parent="."]
-position = Vector2( 96, 120 )
+position = Vector2( -32, 40 )
 frames = SubResource( 12 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="plate" type="Sprite" parent="."]
-position = Vector2( 72, 120 )
+position = Vector2( -56, 40 )
 texture = ExtResource( 7 )
 
 [node name="gate" type="Sprite" parent="."]
-position = Vector2( 192, 80 )
+position = Vector2( 64, 0 )
 texture = ExtResource( 8 )
 offset = Vector2( 0, 4 )
 
 [node name="Title" type="Node2D" parent="."]
+position = Vector2( -128, -80 )
 
 [node name="Title" type="Label" parent="Title"]
 material = SubResource( 13 )
@@ -329,26 +333,26 @@ __meta__ = {
 }
 
 [node name="grass_props" type="Sprite" parent="."]
-position = Vector2( 126, 125 )
+position = Vector2( -2, 45 )
 texture = ExtResource( 12 )
 
 [node name="bigflowers_props" type="Sprite" parent="."]
-position = Vector2( 58.5, 125 )
+position = Vector2( -69.5, 45 )
 texture = ExtResource( 14 )
 
 [node name="drygrass_props" type="Sprite" parent="."]
-position = Vector2( 200, 93 )
+position = Vector2( 72, 13 )
 texture = ExtResource( 11 )
 
 [node name="bigflowers_props2" type="Sprite" parent="."]
-position = Vector2( 154.5, 93 )
+position = Vector2( 26.5, 13 )
 scale = Vector2( -1, 1 )
 texture = ExtResource( 14 )
 
 [node name="vase" type="Sprite" parent="."]
-position = Vector2( 184.5, 121 )
+position = Vector2( 56.5, 41 )
 texture = ExtResource( 13 )
 
 [node name="vase2" type="Sprite" parent="."]
-position = Vector2( 192, 121 )
+position = Vector2( 64, 41 )
 texture = ExtResource( 13 )
